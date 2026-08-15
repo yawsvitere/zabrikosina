@@ -1,12 +1,1 @@
-:root{--gap:16px;--muted:#666}
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;margin:0;color:#111}
-.site-header{border-bottom:1px solid #eee;background:#fff}
-.container{max-width:900px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}
-.brand{font-weight:600}
-.nav a{margin-left:12px;text-decoration:none;color:var(--muted)}
-.nav a.nav-link:hover{color:#111}
-.site-main{max-width:900px;margin:24px auto;padding:0 16px}
-.site-footer{border-top:1px solid #eee;padding:12px 16px;color:var(--muted);font-size:14px}
-.hero{padding:24px 0}
-.grid{display:grid;gap:12px}
-.card{border:1px solid #f0f0f0;padding:12px;border-radius:6px}
+:root{--gap:16px;--muted:#ddd}

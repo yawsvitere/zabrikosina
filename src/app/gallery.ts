@@ -1,4 +1,5 @@
-import { Component, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import PhotoSwipeLightbox from 'photoswipe/lightbox';
 import 'photoswipe/style.css';
 
@@ -23,7 +24,12 @@ import 'photoswipe/style.css';
 export class GalleryComponent implements AfterViewInit, OnDestroy {
   lightbox: PhotoSwipeLightbox | undefined;
 
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
+
   ngAfterViewInit() {
+    // Only initialize PhotoSwipe in the browser (avoid SSR errors)
+    if (!isPlatformBrowser(this.platformId)) return;
+
     this.lightbox = new PhotoSwipeLightbox({
       gallery: '#popka-gallery',
       children: 'a',
@@ -33,6 +39,8 @@ export class GalleryComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    // Only destroy if running in browser and lightbox exists
+    if (!isPlatformBrowser(this.platformId)) return;
     this.lightbox?.destroy();
   }
 }

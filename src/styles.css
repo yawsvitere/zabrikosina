@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+
+:root {
+	--cyrillic-mono-stack: 'Lucida Console', 'Courier New', 'MS Gothic', monospace;
+}
+
+body { margin: 0; background: #050505; color: #fff; }
+
+.mono, code, pre { font-family: var(--cyrillic-mono-stack); }
