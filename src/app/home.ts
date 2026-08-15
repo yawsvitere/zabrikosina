@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { GalleryComponent } from './gallery';
+// import { GalleryComponent } from './gallery'; 
 
 @Component({
   selector: 'home-page',
   standalone: true,
-  imports: [GalleryComponent],
+  imports: [ /* GalleryComponent */ ], 
   templateUrl: './home.html',
   styleUrls: ['./home.css']
 })
