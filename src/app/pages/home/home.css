@@ -37,7 +37,7 @@ img {
   content: "";
   position: absolute;
   inset: 0 0 auto;
-  height: 175px;
+  height: 135px;
   background: #a2453c;
 }
 
@@ -94,7 +94,7 @@ img {
 }
 
 .hero__image {
-  width: min(50vw, 280px);
+  width: min(50vw, 200px);
   aspect-ratio: 1;
   border-radius: 50%;
   object-fit: cover;
@@ -124,7 +124,7 @@ img {
   align-items: stretch;
   width: 100%;
   max-width: 1200px;
-  max-height: 450px;
+  max-height: 420px;
   gap: 12px;
 }
 

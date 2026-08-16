@@ -186,6 +186,15 @@ li {margin: 0; color: black}
 .social-icons {
   gap: 9px;
 }
+.payment-icons {
+  gap: 200px;
+}
+
+.payment-icons img {
+  width: 32px;
+  height: 32px;
+
+}
 
 .social-icons img {
   width: auto;
