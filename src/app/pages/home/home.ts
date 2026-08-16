@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { GalleryDirective } from '../../shared/directives/gallery.directive';
 
 @Component({
@@ -11,16 +11,20 @@ import { GalleryDirective } from '../../shared/directives/gallery.directive';
 export class Home {
   protected discordCopied = false;
 
-  private readonly discordName = 'zabrikoss';
+  private readonly discordName = 'zabrikosina';
   private copyResetTimer?: number;
+
+  constructor(private cdr: ChangeDetectorRef) {}
 
   protected async copyDiscordName(): Promise<void> {
     await this.writeToClipboard(this.discordName);
 
     this.discordCopied = true;
+    this.cdr.markForCheck();
     window.clearTimeout(this.copyResetTimer);
     this.copyResetTimer = window.setTimeout(() => {
       this.discordCopied = false;
+      this.cdr.markForCheck();
     }, 1600);
   }
 
