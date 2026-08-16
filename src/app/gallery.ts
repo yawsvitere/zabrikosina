@@ -1,46 +1,81 @@
-import { Component, AfterViewInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import {
+  Directive,
+  ElementRef,
+  HostListener,
+  Inject,
+  OnDestroy,
+  PLATFORM_ID,
+} from '@angular/core';
 import PhotoSwipeLightbox from 'photoswipe/lightbox';
+import type { SlideData } from 'photoswipe';
 import 'photoswipe/style.css';
 
-@Component({
-  selector: 'app-gallery',
+@Directive({
+  selector: '.gallery',
   standalone: true,
-  template: `
-    <div id="popka-gallery" class="gallery">
-      <a href="https://i.pinimg.com/1200x/8e/25/e0/8e25e01a0569f89b15d92606dfebecd0.jpg"
-         data-pswp-width="1200"
-         data-pswp-height="1200"
-         target="_blank">
-        <img src="https://i.pinimg.com/1200x/8e/25/e0/8e25e01a0569f89b15d92606dfebecd0.jpg" alt="zabrikosina2" class="profile-image">
-      </a>
-    </div>
-  `,
-  styles: [`
-    .gallery { display:inline-block }
-    .gallery img.profile-image { width:440px; height:440px; object-fit:cover; border-radius:0px; cursor:pointer }
-  `]
 })
-export class GalleryComponent implements AfterViewInit, OnDestroy {
-  lightbox: PhotoSwipeLightbox | undefined;
+export class GalleryComponent implements OnDestroy {
+  private lightbox?: PhotoSwipeLightbox;
+  private lightboxInitialized = false;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
+  constructor(
+    private elementRef: ElementRef<HTMLElement>,
+    @Inject(PLATFORM_ID) private platformId: object,
+  ) {}
 
-  ngAfterViewInit() {
-    // Only initialize PhotoSwipe in the browser (avoid SSR errors)
+  @HostListener('click', ['$event'])
+  onClick(event: MouseEvent) {
     if (!isPlatformBrowser(this.platformId)) return;
 
-    this.lightbox = new PhotoSwipeLightbox({
-      gallery: '#popka-gallery',
-      children: 'a',
-      pswpModule: () => import('photoswipe')
+    const image = (event.target as Element | null)?.closest('img');
+    if (!image || !this.elementRef.nativeElement.contains(image)) return;
+
+    const index = this.images.indexOf(image as HTMLImageElement);
+    if (index < 0) return;
+
+    event.preventDefault();
+    this.getLightbox().loadAndOpen(index, this.getItems(), {
+      x: event.clientX,
+      y: event.clientY,
     });
-    this.lightbox.init();
   }
 
   ngOnDestroy() {
-    // Only destroy if running in browser and lightbox exists
     if (!isPlatformBrowser(this.platformId)) return;
+
     this.lightbox?.destroy();
+  }
+
+  private get images() {
+    return Array.from(this.elementRef.nativeElement.querySelectorAll('img'));
+  }
+
+  private getLightbox() {
+    this.lightbox ??= new PhotoSwipeLightbox({
+      pswpModule: () => import('photoswipe'),
+    });
+
+    if (!this.lightboxInitialized) {
+      this.lightbox.init();
+      this.lightboxInitialized = true;
+    }
+
+    return this.lightbox;
+  }
+
+  private getItems(): SlideData[] {
+    return this.images.map((image) => {
+      const src = image.currentSrc || image.src;
+
+      return {
+        src,
+        msrc: src,
+        alt: image.alt,
+        width: image.naturalWidth || image.clientWidth || 1200,
+        height: image.naturalHeight || image.clientHeight || 1200,
+        element: image,
+      };
+    });
   }
 }

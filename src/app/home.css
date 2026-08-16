@@ -58,11 +58,22 @@ p{margin:0; color: black}
     color: #ffffff;
 }
 
-.commissions {
-font-family: 'New Rocker';
-font-size: 100px;
-color: #A2453C;
+.commissions-block {
+    text-align: center;
+    padding: 40px;
 }
+
+.commissions {
+    margin: 0;
+    font-family: 'New Rocker', serif;
+    font-size: 140px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 2px;
+    color: #A2453C;
+}
+
+
 
 .price-table {
     max-width: 2200px;
@@ -114,7 +125,11 @@ color: #A2453C;
 .draw-section {
     margin-bottom: 50px;
 }
-
+.draw-section h1 {
+ font-family: 'New Rocker';
+    font-size: 32px;
+    color: #0000008c;
+}
 .draw-section p {
     margin: 8px 0;
 }
@@ -210,15 +225,16 @@ color: #A2453C;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 22px;
+    gap: 9px;
     flex-wrap: wrap;
 }
 
 .social-icons img {
-    height: 52px;
+    height: 66px;
     width: auto;
     opacity: .8;
     transition: .3s;
+    min-height: 60px;
 }
 
 .social-icons img:hover {
