@@ -15,7 +15,7 @@ import 'photoswipe/style.css';
   selector: '.gallery',
   standalone: true,
 })
-export class GalleryComponent implements OnDestroy {
+export class GalleryDirective implements OnDestroy {
   private lightbox?: PhotoSwipeLightbox;
   private lightboxInitialized = false;
 

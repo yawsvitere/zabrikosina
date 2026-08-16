@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { GalleryComponent } from './gallery'; 
+import { GalleryDirective } from '../../shared/directives/gallery.directive';
 
 @Component({
   selector: 'home-page',
   standalone: true,
-  imports: [GalleryComponent], 
+  imports: [GalleryDirective],
   templateUrl: './home.html',
-  styleUrls: ['./home.css']
+  styleUrls: ['./home.css'],
 })
 export class Home {}

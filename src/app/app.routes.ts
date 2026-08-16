@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { Home } from './home';
-import { Contacts } from './contacts';
-import { TermsOfService } from './terms-of-service';
+import { Contacts } from './pages/contacts/contacts';
+import { Home } from './pages/home/home';
+import { TermsOfService } from './pages/terms-of-service/terms-of-service';
 
 export const routes: Routes = [
   { path: '', title: 'zabrikosina', component: Home },
   { path: 'contacts', title: 'Контакты', component: Contacts },
   { path: 'terms-of-service', title: 'zabrikosina', component: TermsOfService },
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '' },
 ];
