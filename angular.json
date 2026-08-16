@@ -63,7 +63,7 @@
 "serve": {
   "builder": "@angular/build:dev-server",
   "options": {
-    "allowedHosts": ["localhost", "127.0.0.1", "472c-2a01-ecc0-1000-1da5-00-2.ngrok-free.app"]
+    "allowedHosts": ["localhost", "127.0.0.1", "e416-2a01-ecc0-1000-1da5-00-2.ngrok-free.app"]
   },
   "configurations": {
     "production": {

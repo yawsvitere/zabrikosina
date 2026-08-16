@@ -308,7 +308,7 @@ img {
 }
 
 .social-block {
-  gap: 30px;
+  gap: 20px;
 }
 
 .social-icons {
@@ -335,15 +335,20 @@ img {
 
   .page__container {
     padding-top: 96px;
+    padding: 110px 20px 60px;
   }
 
   .hero__image {
-    width: min(62vw, 240px);
+
   }
 
   .gallery {
     grid-template-columns: 1fr;
     max-height: none;
+  }
+
+  .gallery img:nth-child(2) {
+    display: none;
   }
 
   .price-table__row {
@@ -359,4 +364,16 @@ img {
   .button {
     width: 100%;
   }
+  .social-icons {
+    gap: 4px;
+  }
+  .social-icons img {
+  width: auto;
+  min-height: 50px;
+  opacity: .8;
+  transition: opacity .2s ease, transform .2s ease;
+}
+.section-header h2 {
+  font-size: clamp(60px, 12vw, 140px);
+}
 }
