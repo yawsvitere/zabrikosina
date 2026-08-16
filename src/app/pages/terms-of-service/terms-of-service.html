@@ -99,50 +99,53 @@
  
   <p>Thank you for supporting my art! ♡</p>
 
-</div>
+  <section class="contact-section" aria-labelledby="contact-title">
+        <div class="cta-block">
+          <h2 id="contact-title">Want one?</h2>
+          <p>Tell me what you have in mind.</p>
 
-<section class="contact-section">
+          <a href="#" class="button button--primary">REQUEST A COMMISSION -></a>
+        </div>
 
-    <div class="cta-block">
-        <h1>Want one?</h1>
-        <p>Tell me what you have in mind.</p>
+        <div class="questions-block">
+          <h2>Have questions?</h2>
+          <p>Not sure if your idea fits?</p>
+          <p>Want to discuss something before filling out the form?</p>
+          <p>Feel free to reach out.</p>
 
-        <a href="#" class="commission-btn">
-            REQUEST A COMMISSION →
-        </a>
-    </div>
-
-    <div class="questions-block">
-        <h1>Have questions?</h1>
-        <p>Not sure if your idea fits?</p>
-        <p>Want to discuss something before filling out the form?</p>
-        <p>Feel free to reach out.</p>
-
-        <div class="contact-icons">
-            <a href="#">
-                <img src="mail.svg" alt="Email">
+          <div class="contact-icons">
+            <a href="mailto:alinazabrikosina@gmail.com" aria-label="Email">
+              <img src="mail.svg" alt="">
             </a>
 
-            <a href="#">
-                <img src="discord.svg" alt="Discord">
-            </a>
+            <button
+              class="icon-button discord-copy"
+              type="button"
+              aria-label="Copy Discord nickname"
+              (click)="copyDiscordName()"
+            >
+              <img src="discord.svg" alt="">
+              <span class="discord-copy__tooltip" [class.discord-copy__tooltip--visible]="discordCopied">
+                nick copied
+              </span>
+            </button>
+          </div>
         </div>
-    </div>
 
-    <div class="social-block">
-        <p>FIND ME ELSEWHERE</p>
+        <div class="social-block">
+          <p>FIND ME ELSEWHERE</p>
 
-        <div class="social-icons">
-            <a href="#"><img src="instagram.svg" alt=""></a>
-            <a href="#"><img src="threads.svg" alt=""></a>
-            <a href="#"><img src="tumblr.svg" alt=""></a>
-            <a href="#"><img src="bsky.svg" alt=""></a>
-            <a href="#"><img src="pinterest.svg" alt=""></a>
-            <a href="#"><img src="x.svg" alt=""></a>
-            <a href="#"><img src="be.svg" alt=""></a>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/zabrikosina" aria-label="Instagram"><img src="instagram.svg" alt=""></a>
+            <a href="https://www.threads.com/@zabrikosina" aria-label="Threads"><img src="threads.svg" alt=""></a>
+            <a href="https://www.tumblr.com/zabrikoss" aria-label="Tumblr"><img src="tumblr.svg" alt=""></a>
+            <a href="https://bsky.app/profile/zabrikosina.bsky.social" aria-label="Bluesky"><img src="bsky.svg" alt=""></a>
+            <a href="https://www.pinterest.com/zabrikosina/" aria-label="Pinterest"><img src="pinterest.svg" alt=""></a>
+            <a href="https://x.com/zabrikosina" aria-label="X"><img src="x.svg" alt=""></a>
+            <a href="https://www.behance.net/zabrikosina" aria-label="Behance"><img src="be.svg" alt=""></a>
+          </div>
         </div>
+      </section>
     </div>
-
-</section>
   </div>
      
