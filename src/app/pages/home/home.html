@@ -116,9 +116,17 @@
             <img src="mail.svg" alt="">
           </a>
 
-          <a href="zabrikoss" aria-label="Discord">
+          <button
+            class="icon-button discord-copy"
+            type="button"
+            aria-label="Copy Discord nickname"
+            (click)="copyDiscordName()"
+          >
             <img src="discord.svg" alt="">
-          </a>
+            <span class="discord-copy__tooltip" [class.discord-copy__tooltip--visible]="discordCopied">
+              nick copied
+            </span>
+          </button>
         </div>
       </div>
 
