@@ -3,7 +3,7 @@ import { Home } from './home';
 import { Contacts } from './contacts';
 
 export const routes: Routes = [
-  { path: '', title: 'Главная', component: Home },
+  { path: '', title: 'zabrikosina', component: Home },
   { path: 'contacts', title: 'Контакты', component: Contacts },
   { path: '**', redirectTo: '' }
 ];

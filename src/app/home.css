@@ -141,7 +141,7 @@ p{margin:0; color: black}
 .step-title {
     width: fit-content;
     min-width: 180px;
-    height: 42px;
+    height: 60px;
 
     margin: 0 auto 15px;
 
@@ -157,6 +157,22 @@ p{margin:0; color: black}
 
 .step-title p {
     margin: 0;
+}
+
+.step-title--payment {
+    gap: 12px;
+}
+
+.payment-icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.payment-icons img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
 }
 
 .step p {
@@ -278,5 +294,3 @@ p{margin:0; color: black}
 	border-top-left-radius: 30px;
 	border-top-right-radius: 30px;
 }
-
-
