@@ -187,11 +187,28 @@ p{margin:0; color: black}
 }
 
 .cta-block {
-    margin-bottom: 90px;
+    margin-bottom: 60px;
 }
 
 .cta-block p {
     margin: 6px 0;
+}
+.cta-block h1 {
+    font-family: 'New Rocker';
+    font-size: 64px;
+    color: #A2453C;
+    padding-bottom: 0px;
+    margin: 0px;
+    padding-top: 40px;
+}
+
+.questions-block h1 {
+
+ font-family: 'New Rocker';
+    font-size: 42px;
+    color: #0000008c;
+margin: 0px;
+  
 }
 
 .commission-btn {
@@ -199,21 +216,21 @@ p{margin:0; color: black}
     align-items: center;
     justify-content: center;
 
-    width: 300px;
+    width: 400px;
     height: 60px;
 
     margin-top: 20px;
 
     border-radius: 999px;
 
-    background: #b44d3f;
+    background: #A2453C;
     color: #fff;
 
     text-decoration: none;
 }
 
 .questions-block {
-    margin-bottom: 90px;
+    margin-bottom: 60px;
 }
 
 .questions-block p {
@@ -235,6 +252,9 @@ p{margin:0; color: black}
 
 .social-block p {
     margin-bottom: 30px;
+}
+.social-block {
+    margin-bottom: 60px;
 }
 
 .social-icons {
