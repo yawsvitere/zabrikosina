@@ -5,7 +5,7 @@
 	--cyrillic-mono-stack: 'Lucida Console', 'Courier New', 'MS Gothic', monospace;
 }
 
-body { margin: 0; background: #220E0D; color: #fff; }
+body { margin: 0; background: transparent; color: #fff; }
 
 .mono, code, pre { font-family: var(--cyrillic-mono-stack); }
 
