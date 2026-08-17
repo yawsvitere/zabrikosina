@@ -30,7 +30,6 @@ img {
   position: relative;
   overflow: hidden;
   min-height: 100vh;
-  background: #d9d9d9;
 }
 
 .page::before {
@@ -182,7 +181,7 @@ img {
   min-height: 55px;
   padding: 0 24px;
   border-radius: 999px;
-  background: #d4c0c0;
+  background: #A2453C24;
 }
 
 .price-table__title {

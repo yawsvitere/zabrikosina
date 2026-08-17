@@ -30,7 +30,7 @@
             "server": "src/main.server.ts",
             "outputMode": "server",
             "security": {
-              "allowedHosts": []
+              "allowedHosts": ["198.18.0.1", "198.18.0.1:4200", "localhost", "127.0.0.1"]
             },
             "ssr": {
               "entry": "src/server.ts"
@@ -63,7 +63,7 @@
 "serve": {
   "builder": "@angular/build:dev-server",
   "options": {
-    "allowedHosts": ["localhost", "127.0.0.1", "e416-2a01-ecc0-1000-1da5-00-2.ngrok-free.app"]
+    "allowedHosts": ["198.18.0.1", "198.18.0.1:4200", "localhost", "127.0.0.1"]
   },
   "configurations": {
     "production": {
