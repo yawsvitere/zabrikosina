@@ -1,6 +1,6 @@
 
 
-
+@import 'photoswipe/dist/photoswipe.css';
 :root {
 	--cyrillic-mono-stack: 'Lucida Console', 'Courier New', 'MS Gothic', monospace;
 }
